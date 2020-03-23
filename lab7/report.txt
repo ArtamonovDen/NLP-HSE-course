@@ -1,0 +1,29 @@
+Для суммаризации были отобраны 10 текстов из CNN датасета.
+В качестве таргетных выступали строки с пометкой @highlight в конце текста.
+Для каждого файла отдельно выделен таргет и сгенерирован текст с помощью модели BART. Результаты лежат в отдельных папках.
+В целом, получились неплохие результаты. Из-за довольно большого размера текстов, пришлось их нарезать на батчи и делать саммари для каждого батча, а потом просто конкатенировать.
+
+Если посмотреть чисто на саммари и ничего не знать о оригинальном тексте, то можно сложить общее представление о чем там писалось.
+Например, можно сделать вывод, что в первом тексте идет речь про заключенных в США и их программы медитативных практик. Но все равно есть ощущение бреда.
+
+Kenneth Brown lost it all when he was sent to prison for an arson in 1996. His wife and kids, the housebroken dog, the vacation home on Cape Cod all vanished. Brown was convicted of arson and sentenced to 20 years in prison.
+He is currently serving his sentence in a Georgia prison.The American Correctional Chaplains Association provides programs to inmates. "It's a break from all the hustle and noise of the prison environment," says spokesman Gary Friedman.
+"Mostly, the people in Buddhist community are going into the prisons, providing programs," he says.Buddhism is the third most popular religion in America behind Christianity and Judaism. About 1.7 million Americans call themselves Buddhists, and many of them are converts. According to the American Religious Identification Survey in 2008, there were 1.2 million self-identified Buddhists.
+In California, a state where the swollen prison population has resulted in dangerously overcrowded prisons, teaching conflict management is critical, says Zen Buddhist instructor. Anne Seisen Saunders, who was raised Christian, teaches conflict management in California prisons. She says conflict management can help reduce prison overcrowding.
+
+Другой пример выглядит довольно реалистично.
+
+Seven civilians were killed Monday from two separate roadside mines in Afghanistan's eastern Ghazni province.
+The Ministry of Interior says the mines were planted by the Taliban. The incident occurred in the eastern part of the province, the Interior Ministry says.
+The Taliban have not commented on the deaths.
+
+Но есть и очень смешные результаты. В оригинале идет речь про сериал Mad Men, но модель сагрилась на заголовок про Заратустру и пошло поехало дальше. 
+
+"Thus Spoke Zarathustra" is one of the most famous songs of all time. It was written by the German poet and composer Johann Wolfgang von Goethe. The song was written in response to the Nazis' invasion of Germany in World War II.
+Click through the video to hear the full song."It's almost the only way to relieve the pressure. No wonder Ginsberg (Ben Feldman) cut off his nipple," the actor says. "It's like a release valve for the pressure," he adds. "You can feel it. It's almost like a relief"
+
+В общем, делать суммаризацию по новостям мы трансформерам бы не доверили :)
+
+ROUGE посчитали для каждого из примеров. Есть подозрение, что изначально таргет какой-то странный все таки. Да и непонятно насколько это хорошие значения и как их интерпретировать.
+
+p.s. Для датасета на русском не стали делать :<
